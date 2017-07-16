@@ -59,15 +59,15 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Kebijakan/delete'] = 'kebijakan/config';
 $route['Kebijakan/update'] = 'kebijakan/config';
 
-$route['agenda/delete'] = 'agenda/config';
-$route['agenda/update'] = 'agenda/config';
+$route['agenda/delete'] = 'Beranda/';
+$route['agenda/update'] = 'Beranda/';
 
 $route['progress/delete'] = 'progress/config';
 $route['progress/update'] = 'progress/config';
 $route['login/failed'] = 'login/index/failed';
 
-$route['agenda/(:any)'] ='beranda/agenda/$1';
-$route['agenda'] = 'Beranda/agenda';
+// $route['agenda/(:any)'] ='Beranda/';
+// $route['agenda'] = 'Beranda/';
 
 /*$route['kebijakan'] = 'beranda/kebijakan/';
 $route['kebijakan/(:any)'] = 'beranda/kebijakan/$1';

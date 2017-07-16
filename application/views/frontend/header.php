@@ -76,9 +76,6 @@
                         <li>
                             <a href="<?php echo base_url();?>Beranda/view/asdep4" class="btn btn-danger navbar-btn">ASDEP 4</a>
                         </li>
-                        <li>
-                            <a href="<?php echo base_url();?>agenda" class="btn btn-danger navbar-btn">AGENDA</a>
-                        </li>
                         <?php 
                         if ($this->session->userdata('session')) {
                         ?>

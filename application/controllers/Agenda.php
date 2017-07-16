@@ -30,12 +30,13 @@ class Agenda extends CI_Controller {
 	}
 	public function index()
 	{
-		$result['data'] = $this->M_agenda->getAll();
-		$this->load->view('backend/header');
-		$this->load->view('backend/navbar');
-		$this->load->view('backend/sidenav');
-		$this->load->view('backend/list_agenda',$result);
-		$this->load->view('backend/footer');
+		redirect('Beranda/');
+		// $result['data'] = $this->M_agenda->getAll();
+		// $this->load->view('backend/header');
+		// $this->load->view('backend/navbar');
+		// $this->load->view('backend/sidenav');
+		// $this->load->view('backend/list_agenda',$result);
+		// $this->load->view('backend/footer');
 	}
 	public function tambah()
 	{
