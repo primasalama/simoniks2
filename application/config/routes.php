@@ -66,8 +66,8 @@ $route['progress/delete'] = 'progress/config';
 $route['progress/update'] = 'progress/config';
 $route['login/failed'] = 'login/index/failed';
 
-// $route['agenda/(:any)'] ='Beranda/';
-// $route['agenda'] = 'Beranda/';
+//$route['agenda/(:any)'] ='Beranda/';
+//$route['agenda'] = 'Beranda/';
 
 /*$route['kebijakan'] = 'beranda/kebijakan/';
 $route['kebijakan/(:any)'] = 'beranda/kebijakan/$1';
