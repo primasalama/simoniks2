@@ -1,0 +1,80 @@
+<div class="col-sm-9">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+			  <li class="breadcrumb-item"><a href="#"><?php echo strtoupper($this->uri->Segment(1));?></a></li>
+			  <li class="breadcrumb-item active"><?php echo strtoupper($this->uri->Segment(2));?></li>
+			</ol>
+			<div class="panel panel-info">
+				<div class="panel-heading">Form</div>
+				<div class="panel-body">
+					<div id="FormLogin" class="col-sm-7">
+						<form action="<?php echo base_url().$this->uri->Segment(1);?>/add" method="post" enctype="multipart/form-data">
+							<div class="form-group">
+								<label>Nama Kegiatan : </label>
+								<input type="text" name="kegiatan" class="form-control" placeholder="Nama Kegiatan" required="true">
+							</div>
+							<div class="form-group">
+								<label>Tanggal Pelaksanaan : </label>
+								<input type="text" id="tanggal" name="tanggal" class="form-control" placeholder="tanggal" required="true">
+							</div>
+							<div class="form-group">
+								<label>Hasil : </label>
+								<input type="text" name="hasil" class="form-control" placeholder="Hasil" required="true">
+							</div>
+							<div class="form-group">
+								<label>Tindak Lanjut : </label>
+								<input type="text" name="tindak_ljt" class="form-control" placeholder="Tindak Lanjut" required="true">
+							</div>
+							<div class="form-group">
+								<label>Masalah : </label>
+								<input type="text" name="masalah" class="form-control" placeholder="Masalah" required="true">
+							</div>
+							<div class="form-group col-sm-6">
+								<label>Dokumentasi 1</label>
+								<input type="file" name="foto1" class="form-control" placeholder="Unit Kerja" required="true">	
+							</div>
+							<div class="form-group col-sm-6">
+								<label>Dokumentasi 2</label>
+								<input type="file" name="foto2" class="form-control" placeholder="Unit Kerja" required="true">	
+							</div>
+							<div class="form-group">
+								<label>Asisten Deputi</label>
+								<select class="form-control" name="deputi">
+									<option value="asdep1">Asisten Deputi 1</option>
+									<option value="asdep2">Asisten Deputi 2</option>
+									<option value="asdep3">Asisten Deputi 3</option>
+									<option value="asdep4">Asisten Deputi 4</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<input type="submit" value="Submit" class="btn btn-primary">
+								<input type="reset" value="Reset" class="btn btn-warning">
+							</div>
+						</form>
+					</div>
+					<div class="col-sm-5 alert alert-success">
+						<p class="heading"><h4><b>Tata Cara Pengisian</b> : </h4></p>
+						<ol>
+							<li>Mengisi Nama Kegiatan sesuai Kegiatan yang bejalan</li>
+							<li>Mengisi Waktu pelaksanaan dengan Benar</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="col-sm-1">
+	<a href="<?php echo base_url().$this->uri->Segment(1);?>/tambah" class="btn btn-primary" style="margin-bottom:20px;"><span class="glyphicon glyphicon-plus"></span> Tambah</a>	
+	<a href="<?php echo base_url().$this->uri->Segment(1);?>/delete" class="btn btn-warning" style="margin-bottom:20px;"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+	<a href="<?php echo base_url().$this->uri->Segment(1);?>/update" class="btn btn-info"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+
+</div>
+<script>
+      $(function() {
+        $( '#tanggal' ).datepicker();
+        $('#pukul').bootstrapMaterialDatePicker({
+        	date: false,
+        	format : 'HH:mm'
+        });
+      });
+  </script>
