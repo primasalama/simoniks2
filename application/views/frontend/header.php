@@ -60,7 +60,7 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" >
-                    <ul class="nav navbar-nav" style="margin-left:50px;">
+                    <ul class="nav navbar-nav" style="margin-left:150px;">
                         <li>
                             <a href="<?php echo base_url();?>" class="btn btn-danger navbar-btn">BERANDA</a>
                         </li>
