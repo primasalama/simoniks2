@@ -63,32 +63,36 @@
   $j=0;
 	$data = $kprogress->result();
   //print_r($data);
-	for ($i=0; $i < $kprogress->num_rows() ; $i++) { 
-    if (in_array($data[$i]->narasiKebijakan, $array)) {
-      //echo "string";die();
-    }
-    else{
-      //echo "kosong";die();
-      # code...
-      // echo $data[$i]->narasiKebijakan." <br/>";
-      // print_r($array);echo "<br/>";
-      array_push($array, $data[$i]->narasiKebijakan);
-      $hsl = $this->M_progress->getProgressKebijakan_id($data[$i]->narasiKebijakan)->result();
-      $dua = $this->M_progress->getTindakMasalah($data[$i]->narasiKebijakan)->result();
-      foreach ($hsl as $z) {
-        $baris[$j][0] = $i+1;
-        $baris[$j][1] = nl2br($z->narasi);
-        $baris[$j][2] = nl2br($z->uraian);
-        $baris[$j][3] = nl2br($dua[0]->tindak_ljt);
-        $baris[$j][4] = nl2br($dua[0]->masalah);
-        $baris[$j][5] = date("d-M-Y",strtotime($z->tanggal1));
-        $baris[$j][6] = nl2br($z->arahan);  
-        $baris[$j][7] = $z->narasiKebijakan;
-        //print_r($baris);
-        $j++;
+	if ($data) {
+    for ($i=0; $i < $kprogress->num_rows() ; $i++) { 
+      if (in_array($data[$i]->narasiKebijakan, $array)) {
+        //echo "string";die();
+      }
+      else{
+        //echo "kosong";die();
+        # code...
+        // echo $data[$i]->narasiKebijakan." <br/>";
+        // print_r($array);echo "<br/>";
+        array_push($array, $data[$i]->narasiKebijakan);
+        $hsl = $this->M_progress->getProgressKebijakan_id($data[$i]->narasiKebijakan)->result();
+        $dua = $this->M_progress->getTindakMasalah($data[$i]->narasiKebijakan)->result();
+        foreach ($hsl as $z) {
+          $baris[$j][0] = $i+1;
+          $baris[$j][1] = nl2br($z->narasi);
+          $baris[$j][2] = nl2br($z->uraian);
+          $baris[$j][3] = nl2br($dua[0]->tindak_ljt);
+          $baris[$j][4] = nl2br($dua[0]->masalah);
+          $baris[$j][5] = date("d-M-Y",strtotime($z->tanggal1));
+          $baris[$j][6] = nl2br($z->arahan);  
+          $baris[$j][7] = $z->narasiKebijakan;
+          //print_r($baris);
+          $j++;
+        }
       }
     }
-	}
+  }else{
+    $baris = $data;
+  }
   //print_r($baris);
 	?>
 <script type="text/javascript">
